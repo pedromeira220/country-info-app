@@ -72,24 +72,30 @@ export const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
           </CardHeader>
         </Card>
 
-        {countryInfo?.populationCounts ? (
+        {countryInfo?.populationCounts &&
+        countryInfo?.populationCounts.length > 0 ? (
           <CountryPopulationChart
             chartData={countryInfo?.populationCounts || []}
           />
         ) : null}
 
-        <div className="flex flex-col gap-5 mt-5 px-4">
-          <h2 className="font-semibold text-xl">Border country list</h2>
+        {countryInfo?.borderCountries &&
+        countryInfo?.borderCountries.length > 0 ? (
+          <div className="flex flex-col gap-5 mt-5 px-4">
+            <h2 className="font-semibold text-xl">Border country list</h2>
 
-          <CountryList
-            countryList={(countryInfo?.borderCountries || []).map((country) => {
-              return {
-                countryCode: country.countryCode,
-                name: country.commonName,
-              }
-            })}
-          />
-        </div>
+            <CountryList
+              countryList={(countryInfo?.borderCountries || []).map(
+                (country) => {
+                  return {
+                    countryCode: country.countryCode,
+                    name: country.commonName,
+                  }
+                },
+              )}
+            />
+          </div>
+        ) : null}
       </div>
     </div>
   )

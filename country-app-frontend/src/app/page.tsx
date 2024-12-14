@@ -19,7 +19,7 @@ export default function Home() {
       <div className="max-w-lg mx-auto flex flex-col gap-5 mt-5 px-4">
         <h2 className="font-semibold text-xl">Country list</h2>
 
-        <CountryList countryList={countryList} />
+        <CountryList countryList={countryList} hasSearchInput />
       </div>
     </div>
   )

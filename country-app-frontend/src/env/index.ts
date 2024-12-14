@@ -8,8 +8,6 @@ const envSchema = z.object({
   // NEXT_PUBLIC_API_URL: z.string(),
 })
 
-console.log('> process.env', process.env)
-
 const _env = envSchema.safeParse(process.env)
 
 if (_env.success === false) {

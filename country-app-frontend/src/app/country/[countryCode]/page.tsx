@@ -7,7 +7,5 @@ export default async function CountryInfoPage({
 }) {
   const countryCode = (await params).countryCode
 
-  console.log('countryCode', countryCode)
-
   return <CountryPage countryCode={countryCode} />
 }

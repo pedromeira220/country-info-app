@@ -9,23 +9,21 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from '@/components/ui/chart'
-const chartData = [
-  { year: 1991, value: 186 },
-  { year: 1992, value: 305 },
-  { year: 1993, value: 237 },
-  { year: 1994, value: 73 },
-  { year: 1995, value: 209 },
-  { year: 1996, value: 214 },
-]
 
 const chartConfig = {
   value: {
-    label: 'Population',
+    label: 'Population ',
     color: 'hsl(var(--chart-3))',
   },
 } satisfies ChartConfig
 
-export function CountryPopulationChart() {
+interface CountryPopulationChartProps {
+  chartData: { year: number; value: number }[]
+}
+
+export function CountryPopulationChart({
+  chartData,
+}: CountryPopulationChartProps) {
   return (
     <Card>
       <CardHeader>

@@ -42,11 +42,6 @@ export class CountryService {
     const countryFlagUrl = countryFound?.flag;
     const countryIso3 = countryFound?.iso3;
 
-    console.log({
-      countryIso3,
-      countryPopulationResponse: countryPopulationResponse.data.data,
-    });
-
     const populationCounts = countryPopulationResponse.data.data.find(
       (country) => country.iso3 === countryIso3,
     )?.populationCounts;

@@ -8,6 +8,6 @@ export type CountryPopulationResponse = CountriesNowResponse<
     populationCounts: {
       year: number;
       count: number;
-    };
+    }[];
   }[]
 >;
